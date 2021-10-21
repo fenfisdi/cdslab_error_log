@@ -1,3 +1,3 @@
-from src.use_cases.log import Log
+from .log import CreateLog
 
-__ALL__ = ['Log']
+__all__ = ['CreateLog']

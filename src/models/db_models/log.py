@@ -1,11 +1,16 @@
 from mongoengine import (
-    Document,
     DateTimeField,
+    IntField,
     StringField,
-    IntField)
+    UUIDField
+)
 
-class Register(Document):
-    create_date = DateTimeField()
-    aplication_name = StringField()
+from .base import BaseDocument
+
+
+class Register(BaseDocument):
+    uuid = UUIDField(binary=False, unique=True, required=True)
+    reported_at = DateTimeField()
+    application = StringField()
     code = IntField()
     message = StringField()
